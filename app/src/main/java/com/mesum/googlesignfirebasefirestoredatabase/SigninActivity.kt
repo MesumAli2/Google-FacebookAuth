@@ -42,7 +42,7 @@ companion object{
         setContentView(view)
 
         val gson = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken("114621774106-g6b7pug5bdrl18lsrg1m3fbuhorjnn25.apps.googleusercontent.com")
+            .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
 
