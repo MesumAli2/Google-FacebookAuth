@@ -10,6 +10,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.ApiException
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
@@ -19,7 +20,7 @@ import java.lang.Exception
 
 
 private const val TAG = "SignInActivity"
-class SigninActivity : AppCompatActivity() {
+class SigninActivity :  AppCompatActivity() {
 private lateinit var mAuth : FirebaseAuth
 private lateinit var googleSignInClient: GoogleSignInClient
 private lateinit var binding : ActivitySigninBinding
@@ -43,8 +44,8 @@ companion object{
 
         //Firebase auth
         mAuth = FirebaseAuth.getInstance()
-
-        binding.signInBtn.setOnClickListener {
+        binding.signInButton.setSize(SignInButton.SIZE_WIDE)
+        binding.signInButton.setOnClickListener {
             signIn()
         }
 
@@ -96,6 +97,8 @@ companion object{
                 }
             }
     }
+
+
 
 
 }
